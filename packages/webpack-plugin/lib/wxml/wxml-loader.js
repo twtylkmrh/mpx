@@ -97,7 +97,6 @@ module.exports = function (content) {
   content.reverse()
   content = content.join('')
 
-
   if (typeof options.minimize === 'boolean' ? options.minimize : this.minimize) {
     const minimizeOptions = Object.assign({}, options);
     [
@@ -112,7 +111,7 @@ module.exports = function (content) {
       'minifyJS',
       'minifyCSS',
       'removeScriptTypeAttributes',
-      'removeStyleTypeAttributes',
+      'removeStyleTypeAttributes'
     ].forEach(function (name) {
       if (typeof minimizeOptions[name] === 'undefined') {
         minimizeOptions[name] = true
@@ -145,8 +144,6 @@ module.exports = function (content) {
         requestString = JSON.stringify(src)
     }
 
-
     return '" + require(' + requestString + ') + "'
   }) + ';'
-
 }
